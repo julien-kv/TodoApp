@@ -66,16 +66,28 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="w0v-Sh-wgo">
-                                <rect key="frame" x="50" y="23" width="199.5" height="32.5"/>
+                                <rect key="frame" x="50" y="16.5" width="199.5" height="45.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Meeting" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcS-Ps-oqs" userLabel="Task">
-                                        <rect key="frame" x="0.0" y="0.0" width="199.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBV-A5-e03">
+                                        <rect key="frame" x="0.0" y="0.0" width="199.5" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Meeting" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcS-Ps-oqs" userLabel="Task">
+                                                <rect key="frame" x="0.0" y="0.0" width="103" height="31"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xH-Dd-s9p" userLabel="alarm">
+                                                <rect key="frame" x="103" y="0.0" width="96.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="alarm" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Daily meetings and shedules" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znh-b9-Czt" userLabel="Description">
-                                        <rect key="frame" x="0.0" y="18" width="199.5" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="31" width="199.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -108,6 +120,7 @@
                 <outlet property="DeleteButton" destination="pl4-42-vsC" id="I5l-cX-yH5"/>
                 <outlet property="EditButton" destination="CdI-Xx-AKK" id="aa1-gx-nbi"/>
                 <outlet property="RadioButton" destination="fTf-0X-2Pk" id="WWh-KC-ILt"/>
+                <outlet property="alarmButton" destination="9xH-Dd-s9p" id="YJw-OU-bMb"/>
                 <outlet property="taskCellView" destination="ROE-VN-d9P" id="eus-0a-aTM"/>
                 <outlet property="taskDescription" destination="znh-b9-Czt" id="Cip-BD-mpB"/>
                 <outlet property="taskName" destination="VcS-Ps-oqs" id="urd-G0-51j"/>
@@ -116,6 +129,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="alarm" catalog="system" width="124" height="128"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="trash.circle" catalog="system" width="128" height="121"/>

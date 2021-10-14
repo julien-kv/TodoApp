@@ -7,7 +7,7 @@
 
 import Foundation
 protocol OnButtonTapAddTaskWindow{
-    func onbuttonTapOnAddingTask(task:Task)
+    func onbuttonTapOnAddingTask(task:Task,isAlarmSet:Bool)
     func onbuttonTapOnEditingTask(task:Task,index:IndexPath)
 }
 
@@ -16,4 +16,8 @@ protocol TaskAddorEditDelegate{
     func didTapEditTask(at index:IndexPath)
     func didTapRadioButton(at index: IndexPath)
     
+}
+
+protocol AlarmSettingProtocol{
+    func isAlarmSelected(isAlarmSet:Bool)
 }

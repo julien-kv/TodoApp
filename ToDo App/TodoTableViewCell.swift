@@ -17,6 +17,7 @@ class TodoTableViewCell: UITableViewCell{
     @IBOutlet var EditButton: UIButton!
     @IBOutlet var RadioButton: DLRadioButton!
     
+    @IBOutlet var alarmButton: UIButton!
     static let cellIdentifier="taskcell"
     var delegate:TaskAddorEditDelegate?
     var indexPath:IndexPath!

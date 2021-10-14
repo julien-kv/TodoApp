@@ -14,6 +14,7 @@ class ViewController: UIViewController,OnButtonTapAddTaskWindow {
     let userDefaults = UserDefaults.standard
     var todoLists=[Task]()
     var completedLists=[Task]()
+    var delegate:AlarmSettingProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +41,10 @@ class ViewController: UIViewController,OnButtonTapAddTaskWindow {
         navigationController?.present(vc, animated: true, completion: nil)
     }
 
-    func onbuttonTapOnAddingTask(task: Task) {
+    func onbuttonTapOnAddingTask(task: Task,isAlarmSet:Bool) {
         todoLists = fetchTodoListFromUserDefault() ?? [Task]()
         self.todoLists.append(task)
-        
         saveTodoListtoUserDefault(taskArray: todoLists)
-        
         print(fetchTodoListFromUserDefault() ?? [Task]())
         
         self.TodoTableView.reloadData()
@@ -95,6 +94,9 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         }
                 
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: TodoTableViewCell.cellIdentifier,for: indexPath) as! TodoTableViewCell
@@ -106,6 +108,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             cell.taskDescription.text=todoLists[indexPath.row].taskDescription
             cell.RadioButton.isSelected=false
             cell.EditButton.isHidden=false
+            cell.alarmButton.isHidden = !todoLists[indexPath.row].isAlarmSet
         }
         else{
             cell.taskCellView.backgroundColor=UIColor(red: 0.96, green: 0.97, blue: 1.00, alpha: 1.00)
@@ -113,6 +116,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
             cell.taskDescription.text=completedLists[indexPath.row].taskDescription
             cell.RadioButton.isSelected=true
             cell.EditButton.isHidden=true
+            cell.alarmButton.isHidden = !completedLists[indexPath.row].isAlarmSet
             
         }
         return cell
@@ -137,8 +141,7 @@ extension ViewController:TaskAddorEditDelegate{
         
         vc.taskNameForEdit=todoLists[index.row].taskName
         vc.taskDescriptionForEdit=todoLists[index.row].taskDescription
-        vc.taskDateForEditing=todoLists[index.row].alarmDate
-        vc.taskTimeForEditing=todoLists[index.row].alarmTime
+        vc.taskDateTimeForEditing=todoLists[index.row].alarmDateTime
         vc.isfromediting=true
         vc.indexPath=index
         navigationController?.present(vc, animated: true, completion: nil)

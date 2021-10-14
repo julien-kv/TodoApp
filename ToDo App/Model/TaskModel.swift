@@ -10,6 +10,6 @@ import Foundation
 struct Task:Codable{
     var taskName:String
     var taskDescription:String
-    var alarmDate:String?
-    var alarmTime:String?
+    var alarmDateTime:String?
+    var isAlarmSet:Bool
 }
