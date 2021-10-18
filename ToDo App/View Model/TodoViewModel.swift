@@ -6,6 +6,23 @@
 //
 
 import Foundation
+
+protocol OnButtonTapAddTaskWindow{
+    func onbuttonTapOnAddingTask(task:Task,isAlarmSet:Bool)
+    func onbuttonTapOnEditingTask(task:Task,index:IndexPath)
+}
+
+protocol TaskAddorEditDelegate{
+    func didTapDeleteTask(at index:IndexPath)
+    func didTapEditTask(at index:IndexPath)
+    func didTapRadioButton(at index: IndexPath)
+    
+}
+
+protocol AlarmSettingProtocol{
+    func isAlarmSelected(isAlarmSet:Bool)
+}
+
 class TodoViewModel{
     
     func stringToDate(date:String,time:String)->Date{
@@ -20,40 +37,3 @@ class TodoViewModel{
    return dateFormatter.date(from: string)!
     }
 }
-
-//func saveTodoListtoUserDefault(taskArray:[Task]){
-//    do {
-//        let encoder = JSONEncoder()
-//        let data = try encoder.encode(taskArray)
-//        UserDefaults.standard.set(data, forKey: "todoList")
-//    } catch {
-//        print("Unable to Encode CrossPromoPopUpDict (\(error))")
-//    }
-//}
-
-
-//
-//func saveCrossPromoDictToUserDefault(crossPromoDict: [String: CrossPromoPopUpLimit]) {
-//        do {
-//            let encoder = JSONEncoder()
-//            let data = try encoder.encode(crossPromoDict)
-//            UserDefaults.standard.set(data, forKey: "crossPromoPopUpDict")
-//        } catch {
-//            print("Unable to Encode CrossPromoPopUpDict (\(error))")
-//        }
-//    }
-//
-//    func fetchCrossPromoDictFromUserDefault() -> [String: CrossPromoPopUpLimit]? {
-//        if let data = UserDefaults.standard.data(forKey: "crossPromoPopUpDict") {
-//            do {
-//                let decoder = JSONDecoder()
-//                let dict = try decoder.decode([String: CrossPromoPopUpLimit].self, from: data)
-//                return dict
-//            } catch {
-//                print("Unable to Decode Notes (\(error))")
-//                return nil
-//            }
-//        } else {
-//            return nil
-//        }
-//    }

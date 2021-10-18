@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import UserNotifications
 
 class AddTaskWindow: UIViewController {
     
@@ -35,6 +34,9 @@ class AddTaskWindow: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        
         dateTime?.isUserInteractionEnabled=false
         if(isfromediting){
             taskName!.text=taskNameForEdit
@@ -87,7 +89,7 @@ class AddTaskWindow: UIViewController {
 
             self.presentingViewController?.dismiss(animated: true, completion: nil)
             self.delegate?.onbuttonTapOnEditingTask(task: Task(taskName: self.taskName!.text ?? "", taskDescription: self.taskDescription.text ?? "",alarmDateTime: dateTime?.text ?? "",isAlarmSet:isSelectedAlarm),index:indexPath)
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.taskNameBeforeEditing!])
+            //UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.taskNameBeforeEditing!])
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                 if success{
                     self.sheduleTest()
@@ -173,4 +175,9 @@ class AddTaskWindow: UIViewController {
     
     
     
+}
+extension AddTaskWindow:UNUserNotificationCenterDelegate{
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.list,.badge,.banner,.sound])
+    }
 }

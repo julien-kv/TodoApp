@@ -19,9 +19,7 @@
 		F922AC5C270F0DC0008BF6B8 /* AddTaskWindow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F922AC5B270F0DC0008BF6B8 /* AddTaskWindow.storyboard */; };
 		F922AC5F27104855008BF6B8 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F922AC5E27104855008BF6B8 /* TaskModel.swift */; };
 		F944A24C27143B6700803B9A /* AddTaskWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F944A24B27143B6700803B9A /* AddTaskWindow.swift */; };
-		F997B4112715235000B68803 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B4102715235000B68803 /* Protocols.swift */; };
 		F9B12A2A2715595200907BE1 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B12A292715595200907BE1 /* TodoViewModel.swift */; };
-		F9B12A2C2716706B00907BE1 /* userDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B12A2B2716706B00907BE1 /* userDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,9 +39,7 @@
 		F922AC5B270F0DC0008BF6B8 /* AddTaskWindow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTaskWindow.storyboard; sourceTree = "<group>"; };
 		F922AC5E27104855008BF6B8 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		F944A24B27143B6700803B9A /* AddTaskWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskWindow.swift; sourceTree = "<group>"; };
-		F997B4102715235000B68803 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		F9B12A292715595200907BE1 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
-		F9B12A2B2716706B00907BE1 /* userDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,20 +92,14 @@
 		F922AC42270EC632008BF6B8 /* ToDo App */ = {
 			isa = PBXGroup;
 			children = (
+				F9357E3B271D4695002000E8 /* View Controller */,
+				F9357E3A271D467C002000E8 /* View */,
 				F997B40F2715232E00B68803 /* View Model */,
 				F922AC5D2710483A008BF6B8 /* Model */,
 				F922AC43270EC632008BF6B8 /* AppDelegate.swift */,
 				F922AC45270EC632008BF6B8 /* SceneDelegate.swift */,
-				F922AC47270EC632008BF6B8 /* ViewController.swift */,
-				F922AC49270EC632008BF6B8 /* Main.storyboard */,
 				F922AC4C270EC633008BF6B8 /* Assets.xcassets */,
-				F922AC4E270EC633008BF6B8 /* LaunchScreen.storyboard */,
 				F922AC51270EC633008BF6B8 /* Info.plist */,
-				F922AC57270ED148008BF6B8 /* TodoTableViewCell.swift */,
-				F922AC58270ED148008BF6B8 /* TodoTableViewCell.xib */,
-				F922AC5B270F0DC0008BF6B8 /* AddTaskWindow.storyboard */,
-				F944A24B27143B6700803B9A /* AddTaskWindow.swift */,
-				F9B12A2B2716706B00907BE1 /* userDefaults.swift */,
 			);
 			path = "ToDo App";
 			sourceTree = "<group>";
@@ -122,10 +112,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F9357E3A271D467C002000E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F922AC49270EC632008BF6B8 /* Main.storyboard */,
+				F922AC4E270EC633008BF6B8 /* LaunchScreen.storyboard */,
+				F922AC58270ED148008BF6B8 /* TodoTableViewCell.xib */,
+				F922AC5B270F0DC0008BF6B8 /* AddTaskWindow.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9357E3B271D4695002000E8 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F922AC47270EC632008BF6B8 /* ViewController.swift */,
+				F922AC57270ED148008BF6B8 /* TodoTableViewCell.swift */,
+				F944A24B27143B6700803B9A /* AddTaskWindow.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		F997B40F2715232E00B68803 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				F997B4102715235000B68803 /* Protocols.swift */,
 				F9B12A292715595200907BE1 /* TodoViewModel.swift */,
 			);
 			path = "View Model";
@@ -250,8 +260,6 @@
 			files = (
 				F944A24C27143B6700803B9A /* AddTaskWindow.swift in Sources */,
 				F922AC48270EC632008BF6B8 /* ViewController.swift in Sources */,
-				F9B12A2C2716706B00907BE1 /* userDefaults.swift in Sources */,
-				F997B4112715235000B68803 /* Protocols.swift in Sources */,
 				F922AC44270EC632008BF6B8 /* AppDelegate.swift in Sources */,
 				F922AC5F27104855008BF6B8 /* TaskModel.swift in Sources */,
 				F9B12A2A2715595200907BE1 /* TodoViewModel.swift in Sources */,
