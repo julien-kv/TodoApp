@@ -8,7 +8,6 @@
 import UIKit
 
 class AddTaskWindow: UIViewController {
-    
     @IBOutlet var taskName: UITextField?{
         didSet{
             if(oldValue?.text!==nil){
@@ -17,15 +16,12 @@ class AddTaskWindow: UIViewController {
         }
     }
     @IBOutlet var taskDescription: UITextField!
-    //    @IBOutlet var date: UITextField!
-    //    @IBOutlet var time: UITextField!
     @IBOutlet var dateTime: UITextField?
-    
     @IBOutlet var dateTimePicker: UIDatePicker!
+    
     var delegate:OnButtonTapAddTaskWindow?
     var indexPath:IndexPath!
     var isSelectedAlarm:Bool=false
-    
     var isfromediting:Bool=false
     var taskNameForEdit:String?
     var taskDescriptionForEdit:String?
@@ -36,46 +32,38 @@ class AddTaskWindow: UIViewController {
         super.viewDidLoad()
         let center = UNUserNotificationCenter.current()
         center.delegate = self
-        
         dateTime?.isUserInteractionEnabled=false
         if(isfromediting){
             taskName!.text=taskNameForEdit
             taskDescription.text=taskDescriptionForEdit
             dateTime?.text=taskDateTimeForEditing
-            
         }
         self.dateTimePicker.addTarget(self, action: #selector(dateTimePickerValueChanged), for: UIControl.Event.valueChanged)
-        // Do any additional setup after loading the view.
-    }
-    
-    @objc func dateTimePickerValueChanged(){
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy HH:mm"
-        dateTime?.text = formatter.string(from: dateTimePicker.date)
     }
     
     @IBAction func didTapCancelButton(_ sender: UIButton) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    
     @IBAction func didTapAddButton(_ sender: UIButton) {
-        
         if dateTime?.text != ""{
             isSelectedAlarm=true
             comingFromAddOrEditCheck()
-
         }
         else{
             isSelectedAlarm=false
             comingFromAddOrEditCheck()
         }
     }
+    @objc func dateTimePickerValueChanged(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        dateTime?.text = formatter.string(from: dateTimePicker.date)
+    }
+    
     func comingFromAddOrEditCheck(){
         if(isfromediting==false){
             self.presentingViewController?.dismiss(animated: true, completion: nil)
             self.delegate?.onbuttonTapOnAddingTask(task: Task(taskName: self.taskName!.text ?? "", taskDescription: self.taskDescription.text ?? "",alarmDateTime: dateTime?.text ?? "",isAlarmSet: isSelectedAlarm),isAlarmSet: isSelectedAlarm)
-            
-            
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                 if success{
                     self.sheduleTest()
@@ -86,7 +74,6 @@ class AddTaskWindow: UIViewController {
             }
         }
         else{
-
             self.presentingViewController?.dismiss(animated: true, completion: nil)
             self.delegate?.onbuttonTapOnEditingTask(task: Task(taskName: self.taskName!.text ?? "", taskDescription: self.taskDescription.text ?? "",alarmDateTime: dateTime?.text ?? "",isAlarmSet:isSelectedAlarm),index:indexPath)
             //UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.taskNameBeforeEditing!])
@@ -99,7 +86,6 @@ class AddTaskWindow: UIViewController {
                 }
             }
         }
-        
     }
     
     func sheduleTest(){
@@ -172,9 +158,6 @@ class AddTaskWindow: UIViewController {
 //           }
 //        }
 //    }
-    
-    
-    
 }
 extension AddTaskWindow:UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
