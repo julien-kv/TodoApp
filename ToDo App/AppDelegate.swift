@@ -6,15 +6,14 @@
 //
 
 import UIKit
-import UserNotifications
+
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate
+class AppDelegate: UIResponder, UIApplicationDelegate
  {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        UNUserNotificationCenter.current().delegate = self
-
+        configureUserNotifications()
         return true
     }
     // MARK: UISceneSession Lifecycle
@@ -33,3 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
 
 
 }
+// MARK: - UNUserNotificationCenterDelegate
+extension AppDelegate: UNUserNotificationCenterDelegate {
+  func userNotificationCenter(
+    _ center: UNUserNotificationCenter,
+    willPresent notification: UNNotification,
+    withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void
+  ) {
+      completionHandler([.banner,.sound,.badge])
+  }
+    private func configureUserNotifications() {
+      UNUserNotificationCenter.current().delegate = self
+    }
+
+}
+

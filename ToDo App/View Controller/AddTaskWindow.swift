@@ -30,8 +30,6 @@ class AddTaskWindow: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let center = UNUserNotificationCenter.current()
-        center.delegate = self
         dateTime?.isUserInteractionEnabled=false
         if(isfromediting){
             taskName!.text=taskNameForEdit
@@ -158,9 +156,4 @@ class AddTaskWindow: UIViewController {
 //           }
 //        }
 //    }
-}
-extension AddTaskWindow:UNUserNotificationCenterDelegate{
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.list,.badge,.banner,.sound])
-    }
 }
