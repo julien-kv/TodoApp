@@ -199,7 +199,7 @@ extension ViewController:TaskAddorEditDelegate{
 }
 extension ViewController:onDeleteConfirmedProtocol{
     func onDeleteConfirmedButtonClicked(index: IndexPath) {
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.todoLists[index.row].taskName])
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.completedLists[index.row].taskName])
         
         completedLists=fetchCompletedListFromUserDefault() ?? [Task]()
         todoLists=fetchTodoListFromUserDefault() ?? [Task]()
