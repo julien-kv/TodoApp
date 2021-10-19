@@ -40,7 +40,11 @@ class AddTaskWindow: UIViewController {
     }
     
     @IBAction func didTapCancelButton(_ sender: UIButton) {
+        if(isfromediting){
+            sheduleTest()
+        }
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+        
     }
     @IBAction func didTapAddButton(_ sender: UIButton) {
         if dateTime?.text != ""{
@@ -87,18 +91,21 @@ class AddTaskWindow: UIViewController {
     }
     
     func sheduleTest(){
-        let content = UNMutableNotificationContent()
-        content.title = self.taskName!.text!
-        content.sound = .default
-        content.body = self.taskDescription.text!
-        let targetDate = dateTimePicker.date
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year,.month, .day, .hour, .minute], from: targetDate), repeats: false)
-        let request = UNNotificationRequest(identifier: taskName!.text!, content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request) { error in
-            if error != nil{
-                print("Something went wrong")
+        DispatchQueue.main.async {
+            let content = UNMutableNotificationContent()
+            content.title = self.taskName!.text!
+            content.sound = .default
+            content.body = self.taskDescription.text!
+            let targetDate = self.dateTimePicker.date
+            let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year,.month, .day, .hour, .minute], from: targetDate), repeats: false)
+            let request = UNNotificationRequest(identifier: self.taskName!.text!, content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request) { error in
+                if error != nil{
+                    print("Something went wrong")
+                }
             }
         }
+        
     }
 //    func sheduleTest(){
 //        let content = UNMutableNotificationContent()

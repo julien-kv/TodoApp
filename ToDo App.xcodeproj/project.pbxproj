@@ -18,8 +18,10 @@
 		F922AC5A270ED148008BF6B8 /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F922AC58270ED148008BF6B8 /* TodoTableViewCell.xib */; };
 		F922AC5C270F0DC0008BF6B8 /* AddTaskWindow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F922AC5B270F0DC0008BF6B8 /* AddTaskWindow.storyboard */; };
 		F922AC5F27104855008BF6B8 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F922AC5E27104855008BF6B8 /* TaskModel.swift */; };
+		F9357E3F271D77C1002000E8 /* DeleteTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9357E3E271D77C1002000E8 /* DeleteTask.storyboard */; };
 		F944A24C27143B6700803B9A /* AddTaskWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F944A24B27143B6700803B9A /* AddTaskWindow.swift */; };
 		F9B12A2A2715595200907BE1 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B12A292715595200907BE1 /* TodoViewModel.swift */; };
+		F9D5DE54271D813F0024484F /* DeleteTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5DE53271D813F0024484F /* DeleteTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +40,10 @@
 		F922AC58270ED148008BF6B8 /* TodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
 		F922AC5B270F0DC0008BF6B8 /* AddTaskWindow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTaskWindow.storyboard; sourceTree = "<group>"; };
 		F922AC5E27104855008BF6B8 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		F9357E3E271D77C1002000E8 /* DeleteTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DeleteTask.storyboard; sourceTree = "<group>"; };
 		F944A24B27143B6700803B9A /* AddTaskWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskWindow.swift; sourceTree = "<group>"; };
 		F9B12A292715595200907BE1 /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		F9D5DE53271D813F0024484F /* DeleteTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 				F922AC4E270EC633008BF6B8 /* LaunchScreen.storyboard */,
 				F922AC58270ED148008BF6B8 /* TodoTableViewCell.xib */,
 				F922AC5B270F0DC0008BF6B8 /* AddTaskWindow.storyboard */,
+				F9357E3E271D77C1002000E8 /* DeleteTask.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 				F922AC47270EC632008BF6B8 /* ViewController.swift */,
 				F922AC57270ED148008BF6B8 /* TodoTableViewCell.swift */,
 				F944A24B27143B6700803B9A /* AddTaskWindow.swift */,
+				F9D5DE53271D813F0024484F /* DeleteTaskViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9357E3F271D77C1002000E8 /* DeleteTask.storyboard in Resources */,
 				F922AC50270EC633008BF6B8 /* LaunchScreen.storyboard in Resources */,
 				F922AC5C270F0DC0008BF6B8 /* AddTaskWindow.storyboard in Resources */,
 				F922AC4D270EC633008BF6B8 /* Assets.xcassets in Resources */,
@@ -264,6 +271,7 @@
 				F922AC5F27104855008BF6B8 /* TaskModel.swift in Sources */,
 				F9B12A2A2715595200907BE1 /* TodoViewModel.swift in Sources */,
 				F922AC46270EC632008BF6B8 /* SceneDelegate.swift in Sources */,
+				F9D5DE54271D813F0024484F /* DeleteTaskViewController.swift in Sources */,
 				F922AC59270ED148008BF6B8 /* TodoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

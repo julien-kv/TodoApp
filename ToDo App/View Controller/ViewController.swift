@@ -135,6 +135,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
 extension ViewController:TaskAddorEditDelegate{
     
     func didTapEditTask(at index: IndexPath) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.todoLists[index.row].taskName])
         let storyboard = UIStoryboard(name: "AddTaskWindow", bundle: nil)
         let vc=storyboard.instantiateViewController(identifier: "addTask") as! AddTaskWindow
         vc.delegate=self
@@ -149,6 +150,7 @@ extension ViewController:TaskAddorEditDelegate{
     
     }
     func didTapRadioButton(at index: IndexPath) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.todoLists[index.row].taskName])
         completedLists=fetchCompletedListFromUserDefault() ?? [Task]()
         todoLists=fetchTodoListFromUserDefault() ?? [Task]()
         
@@ -185,6 +187,20 @@ extension ViewController:TaskAddorEditDelegate{
 
     
     func didTapDeleteTask(at index: IndexPath) {
+        let storyboard = UIStoryboard(name: "DeleteTask", bundle: nil)
+        let vc=storyboard.instantiateViewController(identifier: "deleteTask") as! DeleteTaskViewController
+        vc.delegate=self
+        vc.index=index
+        navigationController?.present(vc, animated: true, completion: nil)
+    }
+        
+    
+    
+}
+extension ViewController:onDeleteConfirmedProtocol{
+    func onDeleteConfirmedButtonClicked(index: IndexPath) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.todoLists[index.row].taskName])
+        
         completedLists=fetchCompletedListFromUserDefault() ?? [Task]()
         todoLists=fetchTodoListFromUserDefault() ?? [Task]()
         
@@ -198,7 +214,6 @@ extension ViewController:TaskAddorEditDelegate{
             saveCompletedListtoUserDefault(taskArray: completedLists)
             self.TodoTableView.reloadData()
         }
-       
     }
     
     

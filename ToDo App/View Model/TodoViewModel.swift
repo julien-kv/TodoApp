@@ -6,6 +6,9 @@
 //
 
 import Foundation
+protocol onDeleteConfirmedProtocol{
+    func onDeleteConfirmedButtonClicked(index:IndexPath)
+}
 
 protocol OnButtonTapAddTaskWindow{
     func onbuttonTapOnAddingTask(task:Task,isAlarmSet:Bool)
