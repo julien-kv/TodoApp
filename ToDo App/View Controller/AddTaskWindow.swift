@@ -47,6 +47,7 @@ class AddTaskWindow: UIViewController {
         
     }
     @IBAction func didTapAddButton(_ sender: UIButton) {
+        if(taskName?.text != ""){
         if dateTime?.text != ""{
             isSelectedAlarm=true
             comingFromAddOrEditCheck()
@@ -54,6 +55,11 @@ class AddTaskWindow: UIViewController {
         else{
             isSelectedAlarm=false
             comingFromAddOrEditCheck()
+        }
+        }
+        else{
+            taskName?.attributedPlaceholder=NSAttributedString(string:"A task must have a name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+            return
         }
     }
     @objc func dateTimePickerValueChanged(){
