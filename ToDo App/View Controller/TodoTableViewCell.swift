@@ -17,6 +17,7 @@ class TodoTableViewCell: UITableViewCell{
     @IBOutlet var EditButton: UIButton!
     @IBOutlet var RadioButton: DLRadioButton!
     
+    @IBOutlet var cell: UIView!
     @IBOutlet var alarmButton: UIButton!
     static let cellIdentifier="taskcell"
     var delegate:TaskAddorEditDelegate?
@@ -38,6 +39,13 @@ class TodoTableViewCell: UITableViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        taskCellView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
+        
+        cell.layer.masksToBounds=false
+        cell.layer.cornerRadius=10
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOpacity = 0.1
+        cell.layer.shadowOffset = CGSize(width: CGFloat(0.0), height: CGFloat(2.0))
         // Initialization code
     }
 

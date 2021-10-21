@@ -20,19 +20,19 @@
                                 <rect key="frame" x="30" y="373" width="354" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DELETE TASK!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyF-Iu-B6I">
-                                        <rect key="frame" x="118.5" y="20" width="117" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <rect key="frame" x="127.5" y="20" width="99" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to delete the task?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mC7-c9-oqC">
-                                        <rect key="frame" x="20.5" y="50.5" width="313.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="60" y="47" width="234" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="x5i-3z-p7x">
-                                        <rect key="frame" x="30" y="96" width="294" height="31"/>
+                                        <rect key="frame" x="30" y="86.5" width="294" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="636-l9-0if" userLabel="Cancel Button">
                                                 <rect key="frame" x="0.0" y="0.0" width="137" height="31"/>
@@ -62,13 +62,17 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" alpha="0.84999999999999998" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" preferredBehavioralStyle="pad" translatesAutoresizingMaskIntoConstraints="NO" id="x7y-PS-i2V" userLabel="close Button">
-                                        <rect key="frame" x="302.5" y="-16.5" width="41.5" height="32"/>
-                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.75" height="1"/>
-                                        <size key="titleShadowOffset" width="3" height="0.0"/>
+                                    <button opaque="NO" alpha="0.94999999999999996" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" preferredBehavioralStyle="pad" translatesAutoresizingMaskIntoConstraints="NO" id="x7y-PS-i2V" userLabel="close Button">
+                                        <rect key="frame" x="320.5" y="-20" width="23.5" height="23"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.80000000000000004"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="23.5" id="KO4-bS-O6T"/>
+                                            <constraint firstAttribute="height" constant="23" id="Zzf-nV-6YR"/>
+                                        </constraints>
+                                        <size key="titleShadowOffset" width="1" height="0.0"/>
                                         <buttonConfiguration key="configuration" style="filled" cornerStyle="fixed">
                                             <backgroundConfiguration key="background" cornerRadius="29" strokeWidth="0.0">
-                                                <color key="backgroundColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="0.62027493848541349" colorSpace="custom" customColorSpace="sRGB"/>
                                             </backgroundConfiguration>
                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
@@ -79,16 +83,16 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="x7y-PS-i2V" secondAttribute="trailing" constant="10" id="0RX-Mt-6sP"/>
                                     <constraint firstItem="x5i-3z-p7x" firstAttribute="centerX" secondItem="URa-cT-cXu" secondAttribute="centerX" id="0Yx-UI-Fmw"/>
                                     <constraint firstItem="x5i-3z-p7x" firstAttribute="top" secondItem="mC7-c9-oqC" secondAttribute="bottom" constant="25" id="A3G-PL-dqW"/>
-                                    <constraint firstAttribute="trailing" secondItem="x7y-PS-i2V" secondAttribute="trailing" constant="10" id="CRL-73-GYR"/>
                                     <constraint firstAttribute="trailing" secondItem="x5i-3z-p7x" secondAttribute="trailing" constant="30" id="Gj0-jI-8Sc"/>
                                     <constraint firstItem="mC7-c9-oqC" firstAttribute="centerX" secondItem="URa-cT-cXu" secondAttribute="centerX" id="M40-vN-cZa"/>
                                     <constraint firstItem="x5i-3z-p7x" firstAttribute="leading" secondItem="URa-cT-cXu" secondAttribute="leading" constant="30" id="WDa-rq-0HC"/>
                                     <constraint firstItem="YyF-Iu-B6I" firstAttribute="centerX" secondItem="URa-cT-cXu" secondAttribute="centerX" id="ZCq-xx-ecB"/>
                                     <constraint firstAttribute="height" constant="150" id="eQ8-IQ-KTa"/>
+                                    <constraint firstItem="mC7-c9-oqC" firstAttribute="top" secondItem="x7y-PS-i2V" secondAttribute="bottom" constant="44" id="ewu-GM-n5o"/>
                                     <constraint firstItem="YyF-Iu-B6I" firstAttribute="top" secondItem="URa-cT-cXu" secondAttribute="top" constant="20" id="fOe-05-OOz"/>
-                                    <constraint firstItem="mC7-c9-oqC" firstAttribute="top" secondItem="x7y-PS-i2V" secondAttribute="bottom" constant="35" id="gIy-8e-jpM"/>
                                     <constraint firstItem="mC7-c9-oqC" firstAttribute="top" secondItem="YyF-Iu-B6I" secondAttribute="bottom" constant="10" id="wkk-Y7-fk6"/>
                                 </constraints>
                             </view>
@@ -102,6 +106,9 @@
                             <constraint firstItem="URa-cT-cXu" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="uyK-HI-4PI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="deleteView" destination="URa-cT-cXu" id="iAP-Fh-iGh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

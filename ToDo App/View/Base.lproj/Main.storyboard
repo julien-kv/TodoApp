@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,41 +18,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AP5-tx-cNW">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VYW-im-kqq">
-                                        <rect key="frame" x="20" y="20" width="374" height="694"/>
+                                        <rect key="frame" x="20" y="10" width="374" height="648"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yX-5u-vAC">
-                                        <rect key="frame" x="353" y="723" width="31" height="31"/>
+                                        <rect key="frame" x="337" y="696" width="47" height="47"/>
+                                        <color key="tintColor" red="0.097717963160000004" green="0.25766694550000002" blue="0.90985578300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="titleShadowOffset" width="2" height="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
-                                            <imageReference key="image" image="plus" catalog="system" symbolScale="default"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule" buttonSize="large">
+                                            <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="bold"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="didTapAddButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eck-wZ-997"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="1" green="0.99997597930000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="VYW-im-kqq" firstAttribute="leading" secondItem="AP5-tx-cNW" secondAttribute="leading" constant="20" id="0fu-Kd-S1T"/>
                                     <constraint firstAttribute="trailing" secondItem="VYW-im-kqq" secondAttribute="trailing" constant="20" id="2lu-pm-Mpz"/>
                                     <constraint firstAttribute="trailing" secondItem="4yX-5u-vAC" secondAttribute="trailing" constant="30" id="Bbn-yA-XA9"/>
-                                    <constraint firstAttribute="bottom" secondItem="VYW-im-kqq" secondAttribute="bottom" constant="60" id="JS7-kk-ef1"/>
-                                    <constraint firstItem="VYW-im-kqq" firstAttribute="top" secondItem="AP5-tx-cNW" secondAttribute="top" constant="20" id="Oi1-H6-Zp7"/>
-                                    <constraint firstAttribute="bottom" secondItem="4yX-5u-vAC" secondAttribute="bottom" constant="20" id="YPl-8t-HCz"/>
+                                    <constraint firstAttribute="bottom" secondItem="VYW-im-kqq" secondAttribute="bottom" constant="150" id="JS7-kk-ef1"/>
+                                    <constraint firstItem="VYW-im-kqq" firstAttribute="top" secondItem="AP5-tx-cNW" secondAttribute="top" constant="10" id="Oi1-H6-Zp7"/>
+                                    <constraint firstAttribute="bottom" secondItem="4yX-5u-vAC" secondAttribute="bottom" constant="65" id="YPl-8t-HCz"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.0" green="0.45882352941176469" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.097717963160000004" green="0.25766694550000002" blue="0.90985578300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="AP5-tx-cNW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SFx-2c-sZn"/>
                             <constraint firstItem="AP5-tx-cNW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a1a-Zz-s4n"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AP5-tx-cNW" secondAttribute="bottom" id="eGh-qs-mWu"/>
+                            <constraint firstAttribute="bottom" secondItem="AP5-tx-cNW" secondAttribute="bottom" id="eGh-qs-mWu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AP5-tx-cNW" secondAttribute="trailing" id="yqg-RD-3Zc"/>
                         </constraints>
                     </view>
@@ -78,7 +79,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mhk-VK-qD2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="AccentColor"/>
+                        <color key="backgroundColor" red="0.097717963160000004" green="0.25766694550000002" blue="0.90985578300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,9 +98,6 @@
     <resources>
         <image name="circle.inset.filled" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -8,11 +8,13 @@
 import UIKit
 
 class DeleteTaskViewController: UIViewController {
+    @IBOutlet var deleteView: UIView!
     var index:IndexPath!
     var delegate:onDeleteConfirmedProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        deleteView.layer.cornerRadius=8
 
         // Do any additional setup after loading the view.
     }

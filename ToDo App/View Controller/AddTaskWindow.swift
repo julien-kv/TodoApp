@@ -18,7 +18,7 @@ class AddTaskWindow: UIViewController {
     @IBOutlet var taskDescription: UITextField!
     @IBOutlet var dateTime: UITextField?
     @IBOutlet var dateTimePicker: UIDatePicker!
-    
+    @IBOutlet var addTaskWindowView: UIView!
     var delegate:OnButtonTapAddTaskWindow?
     var indexPath:IndexPath!
     var isSelectedAlarm:Bool=false
@@ -30,6 +30,7 @@ class AddTaskWindow: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addTaskWindowView.layer.cornerRadius=8
         dateTime?.isUserInteractionEnabled=false
         if(isfromediting){
             taskName!.text=taskNameForEdit
